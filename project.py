@@ -69,14 +69,21 @@ def menu(knights_number):
             menu(knights_number)
 
         elif select == 0:
-            print("Goodbye")
+            print("--- All your Knights! ---\n")
 
-        # Required for catching an integar
+            # Reset the knights_number, to count all the knights
+            knights_number = 0
+
+            while knights_number < int(len(knights)):
+                print(str(knights_number + 1) + "- Knight's name: " + str(knights[knights_number][0]))
+                knights_number += 1
+
+        # Required for catching an integar selection
         else:
             print("--- Try Again! ---\n")
             menu(knights_number)
 
-    # Looking for an integar selection
+    # We are looking for an integar selection
     except:
         print("--- Try Again! ---")
         menu(knights_number)
