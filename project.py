@@ -1,13 +1,14 @@
-knights = []
 
 # call for this when you want to create a new knight
-def create_knight():
+def create_knight(knights):
+
+    # Creates a new List for the knight
     knights_data = []
 
     print("Let's create a knight!")
 
     # Set the information up for the knight
-    knights_data = (str(input("What is the knight's name: ")))
+    knights_data.append(str(input("What is the knight's name: ")))
 
     # Adds the information to the knight
     knights.append(knights_data)
@@ -50,7 +51,7 @@ def menu(knights_number):
     print("1: Create a new knight")
     print("0: Exit")
 
-    # Allos a selection to be tested
+    # Allow a selection to be tested
     try:
 
         # Takes the users selection option
@@ -63,24 +64,27 @@ def menu(knights_number):
 
             #Print out knight that was made
             print("\n--- Your Knight ---\n") #Alternative way to create new line
-            print("Knight'n name: " + str(knights[knights_number][0] + "\n"))
+            print("Knight's name: " + str(knights[knights_number][0] + "\n"))
             knights_number += 1
             menu(knights_number)
 
         elif select == 0:
             print("Goodbye")
 
+        # Required for catching an integar
         else:
             print("--- Try Again! ---\n")
             menu(knights_number)
 
-
+    # Looking for an integar selection
     except:
         print("--- Try Again! ---")
         menu(knights_number)
 
 # Setting the scene
 knights_number = 0
+knights = []
 
 
+# Run the program
 menu(knights_number)
